@@ -17,17 +17,7 @@ class YOLOv5(DetectionTargetModel):
         self.yolo.max_det = 1000  # maximum number of detections per image
 
     def predict(self, input: str, confidence=0.5) -> sv.Detections:
-        predictions = self.yolo(
-            self.yolo,
-            source=input,
-            imgsz=640,
-            conf_thres=confidence,
-            iou_thres=0.5,
-            max_det=1000,
-            device=device,
-        )
-
-        return predictions
+        return sv.Detections.from_yolov5(self.yolo(input, conf=confidence))
 
     def train(self, dataset_yaml, epochs=300, image_size=640):
         train.run(data=dataset_yaml, epochs=epochs, imgsz=image_size)
