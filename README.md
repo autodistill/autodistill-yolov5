@@ -45,7 +45,7 @@ pred = target_model.predict("./context_images_labeled/train/images/dog-7.jpg", c
 
 ## License
 
-The code in this repository is licensed under an 
+The code in this repository is licensed under an [AGPL 3.0 license](LICENSE).
 
 ## 🏆 Contributing
 
