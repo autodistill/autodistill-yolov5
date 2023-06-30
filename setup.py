@@ -2,7 +2,7 @@ import setuptools
 from setuptools import find_packages
 import re
 
-with open("./src/__init__.py", "r") as f:
+with open("./autodistill_yolov5/__init__.py", "r") as f:
     content = f.read()
     # from https://www.py4u.net/discuss/139845
     version = re.search(r'__version__\s*=\s*[\'"]([^\'"]*)[\'"]', content).group(1)
@@ -11,16 +11,19 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="template-python-zuppif#1",
+    name="autodistill-yolov5",
     version=version,
-    author="zuppif",
-    author_email="francesco.zuppichini@gmail.com",
-    description="<INSERT_DESCRIPTION>",
+    author="Roboflow",
+    author_email="support@roboflow.com",
+    description="YOLOv5 module for use with Autodistill",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    url="https://github.com/autodistill/autodistill-yolov5",
     install_requires=[
-        # list your requires
+        "yolov5",
+        "autodistill",
+        "supervision==0.9.0",
+        "torch"
     ],
     packages=find_packages(exclude=("tests",)),
     extras_require={
@@ -28,7 +31,7 @@ setuptools.setup(
     },
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: AGPL-3.0-only",
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.7",
