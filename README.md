@@ -32,9 +32,9 @@ pip3 install autodistill-yolov5
 ## Quickstart
 
 ```python
-from autodistill_YOLOv5 import YOLOv5
+from autodistill_yolov5 import YOLOv5
 
-target_model = YOLOv5("YOLOv5n.pt")
+target_model = YOLOv5("YOLOv5n")
 
 # train a model
 target_model.train("./context_images_labeled/data.yaml", epochs=200)
